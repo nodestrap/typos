@@ -1,0 +1,36 @@
+{
+  "name": "@nodestrap/typos",
+  "version": "4.0.0",
+  "description": "Texts, paragraphs, font setting and more.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodestrap/typos.git"
+  },
+  "keywords": [
+    "texts",
+    "paragraphs",
+    "fonts",
+    "typography"
+  ],
+  "author": "heymarco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nodestrap/typos/issues"
+  },
+  "homepage": "https://github.com/nodestrap/typos#readme",
+  "dependencies": {
+    "@cssfn/css-config": "^1.0.1",
+    "@cssfn/css-types": "^1.0.2",
+    "@cssfn/cssfn": "^1.0.3",
+    "@cssfn/types": "^1.0.3",
+    "@nodestrap/borders": "^4.0.1",
+    "@nodestrap/colors": "^4.0.1",
+    "@nodestrap/spacers": "^4.0.1"
+  }
+}
