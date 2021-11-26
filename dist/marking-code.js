@@ -13,7 +13,7 @@ usesGeneralProps, } from '@cssfn/css-config'; // Stores & retrieves configuratio
 // nodestrap utilities:
 import colors from '@nodestrap/colors'; // configurable colors & theming defs
 // nodestrap components:
-import gens from './general';
+import gens from './general.js';
 // configs:
 export const [cssProps, cssDecls, cssVals, cssConfig] = createCssConfig(() => {
     return {

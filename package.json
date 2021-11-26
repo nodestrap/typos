@@ -1,6 +1,6 @@
 {
   "name": "@nodestrap/typos",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Texts, paragraphs, font setting and more.",
   "type": "module",
   "main": "dist/index.js",

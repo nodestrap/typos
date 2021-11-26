@@ -5,8 +5,8 @@ createSheet,
 globalDef, } from '@cssfn/cssfn'; // cssfn core
 import { createCssConfig, } from '@cssfn/css-config'; // Stores & retrieves configuration using *css custom properties* (css variables)
 // nodestrap components:
-import gens from './general';
-import { default as heads, usesLevelingRule, } from './heading';
+import gens from './general.js';
+import { default as heads, usesLevelingRule, } from './heading.js';
 // configs:
 export const [cssProps, cssDecls, cssVals, cssConfig] = createCssConfig(() => {
     return {

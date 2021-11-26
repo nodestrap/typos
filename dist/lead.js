@@ -11,8 +11,8 @@ import { createCssConfig,
 // utilities:
 usesGeneralProps, } from '@cssfn/css-config'; // Stores & retrieves configuration using *css custom properties* (css variables)
 // nodestrap components:
-import gens from './general';
-import pars from './paragraph';
+import gens from './general.js';
+import pars from './paragraph.js';
 // configs:
 export const [cssProps, cssDecls, cssVals, cssConfig] = createCssConfig(() => {
     return {

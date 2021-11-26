@@ -13,8 +13,8 @@ usesGeneralProps, } from '@cssfn/css-config'; // Stores & retrieves configuratio
 // nodestrap utilities:
 import colors from '@nodestrap/colors'; // configurable colors & theming defs
 // nodestrap components:
-import marks from './marking-mark';
-import codes from './marking-code';
+import marks from './marking-mark.js';
+import codes from './marking-code.js';
 // configs:
 export const [cssProps, cssDecls, cssVals, cssConfig] = createCssConfig(() => {
     return {

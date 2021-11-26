@@ -9,7 +9,7 @@ layout,
 // rules:
 rule, } from '@cssfn/cssfn'; // cssfn core
 // nodestrap components:
-import gens from './general';
+import gens from './general.js';
 // create a new styleSheet & attach:
 createSheet(() => [
     globalDef([
