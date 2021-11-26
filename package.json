@@ -1,6 +1,6 @@
 {
   "name": "@nodestrap/typos",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Texts, paragraphs, font setting and more.",
   "type": "module",
   "main": "dist/index.js",
@@ -29,7 +29,7 @@
     "@cssfn/css-types": "^1.0.2",
     "@cssfn/cssfn": "^1.0.3",
     "@cssfn/types": "^1.0.3",
-    "@nodestrap/borders": "^4.0.1",
+    "@nodestrap/borders": "^4.0.2",
     "@nodestrap/colors": "^4.0.1",
     "@nodestrap/spacers": "^4.0.1"
   }
