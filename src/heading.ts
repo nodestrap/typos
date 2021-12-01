@@ -24,7 +24,7 @@ import {
     
     // layouts:
     layout,
-    adjacentSiblings,
+    nextSiblings,
     
     
     
@@ -87,8 +87,7 @@ export const usesLevelingRule = <TCssProps extends typeof cssProps, TCssDecls ex
     const selectors = (Array.isArray(selector) ? selector : [selector]);
     const selectorsWithLevels =
         levels
-        .map((level) => selectors.map((selector) => `${selector}${level}`))
-        .flat(/*depth: */1);
+        .flatMap((level) => selectors.map((selector) => `${selector}${level}`))
     
     
     
@@ -101,7 +100,7 @@ export const usesLevelingRule = <TCssProps extends typeof cssProps, TCssDecls ex
     
     
     
-                ...adjacentSiblings(selectorsWithLevels, [
+                ...nextSiblings(selectorsWithLevels, [
                     /*
                      * treats subsequent headings as subtitles
                      * make it closer to the main heading

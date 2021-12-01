@@ -4,7 +4,7 @@ createSheet,
 // compositions:
 globalDef, 
 // layouts:
-layout, adjacentSiblings, 
+layout, nextSiblings, 
 // rules:
 variants, rule, isFirstChild, isLastChild, isNotLastChild, } from '@cssfn/cssfn'; // cssfn core
 import { createCssConfig, 
@@ -40,15 +40,14 @@ export default cssProps;
 export const usesLevelingRule = (cssProps, cssDecls, selector, levels = [1, 2, 3, 4, 5, 6]) => {
     const selectors = (Array.isArray(selector) ? selector : [selector]);
     const selectorsWithLevels = levels
-        .map((level) => selectors.map((selector) => `${selector}${level}`))
-        .flat(/*depth: */ 1);
+        .flatMap((level) => selectors.map((selector) => `${selector}${level}`));
     return [
         // global rule for h1-h6:
         rule(selectorsWithLevels, [
             layout({
                 // layouts:
                 display: 'block',
-                ...adjacentSiblings(selectorsWithLevels, [
+                ...nextSiblings(selectorsWithLevels, [
                     /*
                      * treats subsequent headings as subtitles
                      * make it closer to the main heading
