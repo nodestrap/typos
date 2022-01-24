@@ -3,8 +3,6 @@ import {
 createSheet, 
 // compositions:
 globalDef, 
-// layouts:
-layout, 
 // rules:
 atRoot, } from '@cssfn/cssfn'; // cssfn core
 import { createCssConfig, 
@@ -75,12 +73,10 @@ export default cssProps;
 // create a new styleSheet & attach:
 createSheet(() => [
     globalDef([
-        atRoot([
-            layout({
-                // customize:
-                ...usesGeneralProps(cssProps),
-            }),
-        ]),
+        atRoot({
+            // customize:
+            ...usesGeneralProps(cssProps),
+        }),
     ]),
 ])
     .attach();

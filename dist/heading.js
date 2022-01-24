@@ -3,10 +3,10 @@ import {
 createSheet, 
 // compositions:
 globalDef, 
-// layouts:
-layout, nextSiblings, 
 // rules:
-variants, rule, isFirstChild, isLastChild, isNotLastChild, } from '@cssfn/cssfn'; // cssfn core
+rule, rules, isFirstChild, isLastChild, isNotLastChild, 
+//combinators:
+nextSiblings, } from '@cssfn/cssfn'; // cssfn core
 import { createCssConfig, 
 // utilities:
 usesGeneralProps, usesSuffixedProps, overwriteProps, } from '@cssfn/css-config'; // Stores & retrieves configuration using *css custom properties* (css variables)
@@ -41,62 +41,44 @@ export const usesLevelingRule = (cssProps, cssDecls, selector, levels = [1, 2, 3
     const selectors = (Array.isArray(selector) ? selector : [selector]);
     const selectorsWithLevels = levels
         .flatMap((level) => selectors.map((selector) => `${selector}${level}`));
-    return [
+    return rules([
         // global rule for h1-h6:
-        rule(selectorsWithLevels, [
-            layout({
-                // layouts:
-                display: 'block',
-                ...nextSiblings(selectorsWithLevels, [
-                    /*
-                     * treats subsequent headings as subtitles
-                     * make it closer to the main heading
-                     * make it further to the content
-                    */
-                    layout({
-                        // appearances:
-                        opacity: cssProps.subOpacity,
-                        // spacings:
-                        // make subtitle closer to the main heading:
-                        marginBlockStart: `calc(0px - ${cssProps.marginBlockEnd})`, // cancel-out parent's marginBlockEnd with negative marginBlockStart
-                    }),
-                    variants([
-                        isNotLastChild([
-                            layout({
-                                // spacings:
-                                // make subtitle further to the content:
-                                marginBlockEnd: cssProps.marginBlockEnd,
-                            }),
-                        ]),
-                    ]),
-                ]),
-                // customize:
-                ...usesGeneralProps(cssProps),
+        rule(selectorsWithLevels, {
+            // layouts:
+            display: 'block',
+            // spacings:
+            ...isFirstChild({
+                marginBlockStart: 0, // kill the first marginBlockStart for the first element
             }),
-            variants([
-                isFirstChild([
-                    layout({
-                        // spacings:
-                        marginBlockStart: 0, // kill the first marginBlockStart for the first element
-                    }),
-                ]),
-                isLastChild([
-                    layout({
-                        // spacings:
-                        marginBlockEnd: 0, // kill the last marginBlockEnd for the last element
-                    }),
-                ]),
-            ]),
-        ]),
+            ...isLastChild({
+                marginBlockEnd: 0, // kill the last marginBlockEnd for the last element
+            }),
+            ...nextSiblings(selectorsWithLevels, {
+                /*
+                 * treats subsequent headings as subtitles
+                 * make it closer to the main heading
+                 * make it further to the content
+                */
+                // appearances:
+                opacity: cssProps.subOpacity,
+                // spacings:
+                // make subtitle closer to the main heading:
+                marginBlockStart: `calc(0px - ${cssProps.marginBlockEnd})`,
+                ...isNotLastChild({
+                    // make subtitle further to the content:
+                    marginBlockEnd: cssProps.marginBlockEnd,
+                }),
+            }),
+            // customize:
+            ...usesGeneralProps(cssProps),
+        }),
         // individual rule for each h1-h6:
-        ...levels
-            .map((level) => rule(selectors.map((selector) => `${selector}${level}`), [
-            layout({
-                // customize with propName{level}:
-                ...overwriteProps(cssDecls, usesSuffixedProps(cssProps, `${level}`)),
-            }),
-        ])),
-    ];
+        levels
+            .map((level) => rule(selectors.map((selector) => `${selector}${level}`), {
+            // customize with propName{level}:
+            ...overwriteProps(cssDecls, usesSuffixedProps(cssProps, `${level}`)),
+        })),
+    ]);
 };
 createSheet(() => [
     globalDef([

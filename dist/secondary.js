@@ -3,8 +3,6 @@ import {
 createSheet, 
 // compositions:
 globalDef, 
-// layouts:
-layout, 
 // rules:
 rule, } from '@cssfn/cssfn'; // cssfn core
 import { createCssConfig, 
@@ -27,12 +25,10 @@ export default cssProps;
 // create a new styleSheet & attach:
 createSheet(() => [
     globalDef([
-        rule(['small', '.txt-sec'], [
-            layout({
-                // customize:
-                ...usesGeneralProps(cssProps),
-            }),
-        ]),
+        rule(['small', '.txt-sec'], {
+            // customize:
+            ...usesGeneralProps(cssProps),
+        }),
     ]),
 ])
     .attach();

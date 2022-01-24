@@ -3,10 +3,8 @@ import {
 createSheet, 
 // compositions:
 globalDef, 
-// layouts:
-layout, 
 // rules:
-variants, rule, isFirstChild, isLastChild, } from '@cssfn/cssfn'; // cssfn core
+rule, isFirstChild, isLastChild, } from '@cssfn/cssfn'; // cssfn core
 import { createCssConfig, 
 // utilities:
 usesGeneralProps, } from '@cssfn/css-config'; // Stores & retrieves configuration using *css custom properties* (css variables)
@@ -30,28 +28,19 @@ export default cssProps;
 // create a new styleSheet & attach:
 createSheet(() => [
     globalDef([
-        rule(['p', '.p'], [
-            layout({
-                // layouts:
-                display: 'block',
-                // customize:
-                ...usesGeneralProps(cssProps),
+        rule(['p', '.p'], {
+            // layouts:
+            display: 'block',
+            // spacings:
+            ...isFirstChild({
+                marginBlockStart: 0, // kill the first marginBlockStart for the first element
             }),
-            variants([
-                isFirstChild([
-                    layout({
-                        // spacings:
-                        marginBlockStart: 0, // kill the first marginBlockStart for the first element
-                    }),
-                ]),
-                isLastChild([
-                    layout({
-                        // spacings:
-                        marginBlockEnd: 0, // kill the last marginBlockEnd for the last element
-                    }),
-                ]),
-            ]),
-        ]),
+            ...isLastChild({
+                marginBlockEnd: 0, // kill the last marginBlockEnd for the last element
+            }),
+            // customize:
+            ...usesGeneralProps(cssProps),
+        }),
     ]),
 ])
     .attach();

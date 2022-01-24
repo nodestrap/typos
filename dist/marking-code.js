@@ -3,8 +3,6 @@ import {
 createSheet, 
 // compositions:
 globalDef, 
-// layouts:
-layout, 
 // rules:
 rule, } from '@cssfn/cssfn'; // cssfn core
 import { createCssConfig, 
@@ -41,14 +39,12 @@ export default cssProps;
 // create a new styleSheet & attach:
 createSheet(() => [
     globalDef([
-        rule(['code', '.code', 'var', '.var', 'samp', '.samp'], [
-            layout({
-                // layouts:
-                display: 'inline',
-                // customize:
-                ...usesGeneralProps(cssProps),
-            }),
-        ]),
+        rule(['code', '.code', 'var', '.var', 'samp', '.samp'], {
+            // layouts:
+            display: 'inline',
+            // customize:
+            ...usesGeneralProps(cssProps),
+        }),
     ]),
 ])
     .attach();

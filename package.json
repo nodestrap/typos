@@ -1,6 +1,6 @@
 {
   "name": "@nodestrap/typos",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "description": "Texts, paragraphs, font setting and more.",
   "type": "module",
   "main": "dist/index.js",
@@ -25,12 +25,12 @@
   },
   "homepage": "https://github.com/nodestrap/typos#readme",
   "dependencies": {
-    "@cssfn/css-config": "^1.0.1",
-    "@cssfn/css-types": "^1.0.2",
-    "@cssfn/cssfn": "^1.0.4",
-    "@cssfn/types": "^1.0.3",
-    "@nodestrap/borders": "^4.0.2",
-    "@nodestrap/colors": "^4.0.1",
-    "@nodestrap/spacers": "^4.0.1"
+    "@cssfn/css-config": "^1.0.4",
+    "@cssfn/css-types": "^1.0.4",
+    "@cssfn/cssfn": "^1.0.9",
+    "@cssfn/types": "^1.0.4",
+    "@nodestrap/borders": "^4.0.3",
+    "@nodestrap/colors": "^4.0.4",
+    "@nodestrap/spacers": "^4.0.2"
   }
 }

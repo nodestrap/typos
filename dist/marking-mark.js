@@ -3,8 +3,6 @@ import {
 createSheet, 
 // compositions:
 globalDef, 
-// layouts:
-layout, 
 // rules:
 rule, } from '@cssfn/cssfn'; // cssfn core
 import { createCssConfig, 
@@ -38,14 +36,12 @@ export default cssProps;
 // create a new styleSheet & attach:
 createSheet(() => [
     globalDef([
-        rule(['mark', '.mark'], [
-            layout({
-                // layouts:
-                display: 'inline',
-                // customize:
-                ...usesGeneralProps(cssProps),
-            }),
-        ]),
+        rule(['mark', '.mark'], {
+            // layouts:
+            display: 'inline',
+            // customize:
+            ...usesGeneralProps(cssProps),
+        }),
     ]),
 ])
     .attach();

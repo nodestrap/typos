@@ -3,8 +3,6 @@ import {
 createSheet, 
 // compositions:
 globalDef, 
-// layouts:
-layout, 
 // rules:
 rule, } from '@cssfn/cssfn'; // cssfn core
 import { createCssConfig, 
@@ -29,22 +27,20 @@ export default cssProps;
 // create a new styleSheet & attach:
 createSheet(() => [
     globalDef([
-        rule(['hr'], [
-            layout({
-                // layouts:
-                display: 'block',
-                // sizes:
-                blockSize: cssProps.width,
-                // borders:
-                border: 0,
-                // backgrounds:
-                backgroundColor: 'currentColor',
-                // customize:
-                ...usesGeneralProps(cssProps),
-                // delete unnecessary props:
-                width: undefined, // delete from cssProps. width means blockSize (the height of the <hr>)
-            }),
-        ]),
+        rule('hr', {
+            // layouts:
+            display: 'block',
+            // sizes:
+            blockSize: cssProps.width,
+            // borders:
+            border: 0,
+            // backgrounds:
+            backgroundColor: 'currentColor',
+            // customize:
+            ...usesGeneralProps(cssProps),
+            // delete unnecessary props:
+            width: undefined, // delete from cssProps. width means blockSize (the height of the <hr>)
+        }),
     ]),
 ])
     .attach();
