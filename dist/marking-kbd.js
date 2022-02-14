@@ -22,6 +22,7 @@ export const [cssProps, cssDecls, cssVals, cssConfig] = createCssConfig(() => {
         fontStyle: codes.fontStyle,
         textDecoration: codes.textDecoration,
         lineHeight: codes.lineHeight,
+        overflowWrap: codes.overflowWrap,
         foreg: colors.white,
         backg: colors.grayDark,
         //#region borders

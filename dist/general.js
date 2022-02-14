@@ -47,6 +47,7 @@ export const [cssProps, cssDecls, cssVals, cssConfig] = createCssConfig(() => {
         lineHeightSm: 1.25,
         lineHeightNm: 1.50,
         lineHeightLg: 2.00,
+        overflowWrap: 'break-word',
         foreg: colors.foreg,
         /**
          * Defaults is color's backg.

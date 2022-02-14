@@ -23,6 +23,7 @@ export const [cssProps, cssDecls, cssVals, cssConfig] = createCssConfig(() => {
         fontStyle: 'none',
         textDecoration: 'none',
         lineHeight: 'inherit',
+        overflowWrap: 'inherit',
         foreg: colors.pink,
         backg: 'none',
         //#region borders

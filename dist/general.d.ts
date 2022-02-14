@@ -24,6 +24,7 @@ export declare const cssProps: import("@cssfn/css-config").Refs<{
     lineHeightSm: 0 | (string & {}) | (number & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | `var(--${string})` | `var(--${string},var(--${string}))` | `var(--${string},${string})` | (Cust.General | Cust.Ref)[] | ("!important" | Cust.General | Cust.Ref | (Cust.General | Cust.Ref)[])[] | "normal";
     lineHeightNm: 0 | (string & {}) | (number & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | `var(--${string})` | `var(--${string},var(--${string}))` | `var(--${string},${string})` | (Cust.General | Cust.Ref)[] | ("!important" | Cust.General | Cust.Ref | (Cust.General | Cust.Ref)[])[] | "normal";
     lineHeightLg: 0 | (string & {}) | (number & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | `var(--${string})` | `var(--${string},var(--${string}))` | `var(--${string},${string})` | (Cust.General | Cust.Ref)[] | ("!important" | Cust.General | Cust.Ref | (Cust.General | Cust.Ref)[])[] | "normal";
+    overflowWrap: Cust.Expr | Prop.OverflowWrap;
     foreg: Cust.Ref | Prop.Color;
     /**
      * Defaults is color's backg.
@@ -55,6 +56,7 @@ export declare const cssProps: import("@cssfn/css-config").Refs<{
     lineHeightSm: 0 | (string & {}) | (number & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | `var(--${string})` | `var(--${string},var(--${string}))` | `var(--${string},${string})` | (Cust.General | Cust.Ref)[] | ("!important" | Cust.General | Cust.Ref | (Cust.General | Cust.Ref)[])[] | "normal";
     lineHeightNm: 0 | (string & {}) | (number & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | `var(--${string})` | `var(--${string},var(--${string}))` | `var(--${string},${string})` | (Cust.General | Cust.Ref)[] | ("!important" | Cust.General | Cust.Ref | (Cust.General | Cust.Ref)[])[] | "normal";
     lineHeightLg: 0 | (string & {}) | (number & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | `var(--${string})` | `var(--${string},var(--${string}))` | `var(--${string},${string})` | (Cust.General | Cust.Ref)[] | ("!important" | Cust.General | Cust.Ref | (Cust.General | Cust.Ref)[])[] | "normal";
+    overflowWrap: Cust.Expr | Prop.OverflowWrap;
     foreg: Cust.Ref | Prop.Color;
     /**
      * Defaults is color's backg.
@@ -86,6 +88,7 @@ export declare const cssProps: import("@cssfn/css-config").Refs<{
     lineHeightSm: 0 | (string & {}) | (number & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | `var(--${string})` | `var(--${string},var(--${string}))` | `var(--${string},${string})` | (Cust.General | Cust.Ref)[] | ("!important" | Cust.General | Cust.Ref | (Cust.General | Cust.Ref)[])[] | "normal";
     lineHeightNm: 0 | (string & {}) | (number & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | `var(--${string})` | `var(--${string},var(--${string}))` | `var(--${string},${string})` | (Cust.General | Cust.Ref)[] | ("!important" | Cust.General | Cust.Ref | (Cust.General | Cust.Ref)[])[] | "normal";
     lineHeightLg: 0 | (string & {}) | (number & {}) | "-moz-initial" | "inherit" | "initial" | "revert" | "unset" | `var(--${string})` | `var(--${string},var(--${string}))` | `var(--${string},${string})` | (Cust.General | Cust.Ref)[] | ("!important" | Cust.General | Cust.Ref | (Cust.General | Cust.Ref)[])[] | "normal";
+    overflowWrap: Cust.Expr | Prop.OverflowWrap;
     foreg: Cust.Ref | Prop.Color;
     /**
      * Defaults is color's backg.

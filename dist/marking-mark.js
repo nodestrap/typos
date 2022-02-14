@@ -20,6 +20,7 @@ export const [cssProps, cssDecls, cssVals, cssConfig] = createCssConfig(() => {
         fontStyle: 'inherit',
         textDecoration: 'inherit',
         lineHeight: 'inherit',
+        overflowWrap: 'inherit',
         foreg: 'inherit',
         backg: colors.warningThin,
         //#region borders
